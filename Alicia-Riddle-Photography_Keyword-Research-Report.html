@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alicia Riddle Photography — Keyword Research Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const ChartComponent = ({ type, data, options, height = 300 }) => {
+      const canvasRef = React.useRef(null);
+      const chartRef = React.useRef(null);
+      React.useEffect(() => {
+        if (chartRef.current) chartRef.current.destroy();
+        chartRef.current = new Chart(canvasRef.current, { type, data, options });
+        return () => { if (chartRef.current) chartRef.current.destroy(); };
+      }, []);
+      return <canvas ref={canvasRef} style={{ maxHeight: height + 'px' }} />;
+    };
+
+    const InklineLogo = ({ color = '#0057B8', size = 'md' }) => {
+      const sizeMap = { sm: 'w-16 h-16', md: 'w-24 h-24', lg: 'w-32 h-32' };
+      return (
+        <svg viewBox="0 0 1071.1 365" className={sizeMap[size]} xmlns="http://www.w3.org/2000/svg">
+          <path fill={color} d="M278.8,60.2H86.2c-14.4,0-26,11.7-26,26v192.6c0,14.4,11.7,26,26,26h192.6c14.4,0,26-11.7,26-26V86.2c0-14.4-11.7-26-26-26ZM191.8,110.1h60.2v48h-60.2v-48ZM194.9,254.9l-36.7-56.4v56.4h-48v-96.8h34.2c-13.3-3-21.6-16.2-18.5-29.5,3-13.3,16.2-21.6,29.5-18.5,13.3,3,21.6,16.2,18.5,29.5-2.1,9.2-9.3,16.4-18.5,18.5h36.5l63,96.8h-60Z" />
+          <path fill={color} d="M407.8,249.3h-23.8V115.7h23.8v133.6Z" />
+          <path fill={color} d="M533.2,249.3h-21.1l-63.4-91h-1.1v91h-23.8V115.7h21.5l63,91.4h1.1v-91.4h23.8v133.6h0Z" />
+          <path fill={color} d="M547.4,115.7h23.8v61.5h1.9l52.1-61.5h29.4l-51.7,60,52.1,73.6h-28.7l-40-57.4-15.1,17.7v39.6h-23.8V115.7Z" />
+          <path fill={color} d="M665.5,115.7h23.8v113.6h58.9v20h-82.7V115.7Z" />
+          <path fill={color} d="M783.5,249.3h-23.8V115.7h23.8v133.6Z" />
+          <path fill={color} d="M908.6,249.3h-21.1l-63.4-91h-1.1v91h-23.8V115.7h21.5l63,91.4h1.1v-91.4h23.8v133.6h0Z" />
+          <path fill={color} d="M923.7,115.7h86.8v20.4h-63v36.2h58.5v20.4h-58.5v36.6h63.4v20h-87.2V115.7Z" />
+        </svg>
+      );
+    };
+
+    const ARPLogo = ({ variant = 'dark', className = 'h-24' }) => {
+      const showBackground = variant === 'dark';
+      const fillColor = variant === 'dark' ? '#fff' : '#fff';
+      return (
+        <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" className={className}>
+          {showBackground && <rect fill="#231f20" width="360" height="360" rx="36" ry="36"/>}
+          <g>
+            <g>
+              <path fill={fillColor} d="M91.07,177.67l-4.32-10.58h-19.96l-4.32,10.58h-10.59l20.23-47.54h9.58l20.23,47.54h-10.86ZM76.77,142.6l-6.27,15.31h12.54l-6.27-15.31Z"/>
+              <path fill={fillColor} d="M111.89,177.67v-47.2h10.38v37.77h23.53v9.44h-33.92Z"/>
+              <path fill={fillColor} d="M156.79,177.67v-47.2h10.39v47.2h-10.39Z"/>
+              <path fill={fillColor} d="M203.79,178.48c-13.89,0-24.21-10.72-24.21-24.28v-.13c0-13.42,10.11-24.41,24.61-24.41,8.9,0,14.23,2.97,18.62,7.28l-6.61,7.62c-3.64-3.3-7.35-5.33-12.07-5.33-7.96,0-13.69,6.61-13.69,14.7v.14c0,8.09,5.6,14.83,13.69,14.83,5.39,0,8.7-2.16,12.41-5.53l6.61,6.67c-4.86,5.19-10.25,8.43-19.35,8.43Z"/>
+              <path fill={fillColor} d="M234.6,177.67v-47.2h10.38v47.2h-10.38Z"/>
+              <path fill={fillColor} d="M294.61,177.67l-4.31-10.58h-19.96l-4.31,10.58h-10.59l20.24-47.54h9.57l20.23,47.54h-10.86ZM280.32,142.6l-6.27,15.31h12.54l-6.27-15.31Z"/>
+              <path fill={fillColor} d="M81.12,237.55l-10.12-15.11h-8.16v15.11h-10.39v-47.2h21.58c11.13,0,17.8,5.87,17.8,15.57v.14c0,7.61-4.11,12.41-10.12,14.63l11.53,16.86h-12.14ZM81.32,206.46c0-4.45-3.1-6.75-8.16-6.75h-10.31v13.55h10.52c2.05,0,3.23-1.09,3.23-2.71v-.06Z"/>
+              <path fill={fillColor} d="M101.68,237.55v-47.2h10.39v47.2h-10.39Z"/>
+              <path fill={fillColor} d="M142.27,237.55h-18.41v-47.2h18.41c14.84,0,25.09,10.18,25.09,23.46v.14c0,13.28-10.25,23.6-25.09,23.6ZM156.5,213.95c0-8.36-5.73-14.23-14.23-14.23h-8.02v28.46h8.02c8.5,0,14.23-5.74,14.23-14.1v-.13Z"/>
+              <path fill={fillColor} d="M194.99,237.55h-18.41v-47.2h18.41c14.83,0,25.09,10.18,25.09,23.46v.14c0,13.28-10.25,23.6-25.09,23.6ZM209.22,213.95c0-8.36-5.73-14.23-14.23-14.23h-8.03v28.46h8.03c8.5,0,14.23-5.74,14.23-14.1v-.13Z"/>
+              <path fill={fillColor} d="M229.3,237.55v-47.2h10.39v37.77h23.54v9.44h-33.92Z"/>
+              <path fill={fillColor} d="M271.04,237.55v-47.2h35.61v9.24h-25.29v9.58h22.25v9.24h-22.25v9.91h25.62v9.24h-35.94Z"/>
+            </g>
+            <g>
+              <path fill={fillColor} d="M59.82,280.81h-3.2v5.75h-4.21v-19.16h7.83c4.57,0,7.34,2.7,7.34,6.62v.06c0,4.44-3.45,6.73-7.75,6.73ZM63.3,274.11c0-1.89-1.31-2.9-3.42-2.9h-3.26v5.86h3.34c2.11,0,3.34-1.26,3.34-2.9v-.05Z"/>
+              <path fill={fillColor} d="M86.24,286.56v-7.69h-7.78v7.69h-4.21v-19.16h4.21v7.58h7.78v-7.58h4.22v19.16h-4.22Z"/>
+              <path fill={fillColor} d="M107.91,286.89c-5.91,0-10.15-4.4-10.15-9.85v-.06c0-5.45,4.3-9.91,10.21-9.91s10.15,4.41,10.15,9.86v.05c0,5.45-4.3,9.91-10.21,9.91ZM113.72,276.98c0-3.28-2.41-6.02-5.81-6.02s-5.75,2.68-5.75,5.97v.05c0,3.29,2.41,6.02,5.81,6.02s5.75-2.68,5.75-5.96v-.06Z"/>
+              <path fill={fillColor} d="M133.29,271.29v15.27h-4.22v-15.27h-5.83v-3.89h15.88v3.89h-5.83Z"/>
+              <path fill={fillColor} d="M154.39,286.89c-5.91,0-10.16-4.4-10.16-9.85v-.06c0-5.45,4.3-9.91,10.21-9.91s10.16,4.41,10.16,9.86v.05c0,5.45-4.3,9.91-10.21,9.91ZM160.2,276.98c0-3.28-2.41-6.02-5.8-6.02s-5.75,2.68-5.75,5.97v.05c0,3.29,2.41,6.02,5.8,6.02s5.75-2.68,5.75-5.96v-.06Z"/>
+              <path fill={fillColor} d="M181.14,286.89c-5.97,0-10.08-4.19-10.08-9.85v-.06c0-5.45,4.24-9.91,10.05-9.91,3.45,0,5.53.93,7.53,2.63l-2.65,3.2c-1.48-1.23-2.8-1.94-5.01-1.94-3.07,0-5.5,2.71-5.5,5.97v.05c0,3.51,2.41,6.08,5.8,6.08,1.53,0,2.9-.38,3.97-1.15v-2.74h-4.24v-3.64h8.32v8.32c-1.97,1.67-4.68,3.04-8.18,3.04Z"/>
+              <path fill={fillColor} d="M208.56,286.56l-4.1-6.13h-3.31v6.13h-4.22v-19.16h8.76c4.51,0,7.23,2.38,7.23,6.32v.05c0,3.1-1.67,5.05-4.11,5.95l4.68,6.84h-4.93ZM208.65,273.94c0-1.81-1.26-2.74-3.31-2.74h-4.19v5.5h4.27c2.05,0,3.23-1.09,3.23-2.71v-.06Z"/>
+              <path fill={fillColor} d="M234.54,286.56l-1.75-4.3h-8.1l-1.75,4.3h-4.3l8.21-19.3h3.89l8.21,19.3h-4.4ZM228.74,272.33l-2.55,6.21h5.09l-2.54-6.21Z"/>
+              <path fill={fillColor} d="M252.88,280.81h-3.21v5.75h-4.22v-19.16h7.83c4.57,0,7.34,2.7,7.34,6.62v.06c0,4.44-3.45,6.73-7.74,6.73ZM256.36,274.11c0-1.89-1.31-2.9-3.42-2.9h-3.25v5.86h3.34c2.1,0,3.34-1.26,3.34-2.9v-.05Z"/>
+              <path fill={fillColor} d="M279.29,286.56v-7.69h-7.77v7.69h-4.22v-19.16h4.22v7.58h7.77v-7.58h4.22v19.16h-4.22Z"/>
+              <path fill={fillColor} d="M301.27,278.92v7.64h-4.22v-7.55l-7.36-11.6h4.93l4.58,7.69,4.65-7.69h4.8l-7.37,11.52Z"/>
+            </g>
+            <path fill={fillColor} d="M307.96,255.11H52.03c-1.37,0-2.49-1.11-2.49-2.49s1.11-2.49,2.49-2.49h255.93c1.37,0,2.49,1.11,2.49,2.49s-1.11,2.49-2.49,2.49Z"/>
+            <g>
+              <path fill={fillColor} d="M201.55,117.59h-46.55c-1.44,0-2.58-1.13-2.58-2.57v-32.13c0-1.44,1.13-2.58,2.58-2.58h12.15l1.54-5.35c.31-1.14,1.34-1.86,2.47-1.86h14.42c1.13,0,2.16.72,2.47,1.86l1.54,5.35h12.05c1.44,0,2.57,1.14,2.57,2.58v32.13c-.1,1.44-1.23,2.57-2.68,2.57ZM157.57,112.45h41.4v-26.98h-11.43c-1.13,0-2.16-.72-2.47-1.86l-1.54-5.36h-10.5l-1.55,5.36c-.31,1.14-1.34,1.86-2.47,1.86h-11.43v26.98Z"/>
+              <path fill={fillColor} d="M178.27,90.1c4.33,0,7.82,3.5,7.82,7.82s-3.5,7.83-7.82,7.83-7.82-3.5-7.82-7.83,3.5-7.82,7.82-7.82M178.27,84.96c-7.21,0-12.98,5.87-12.98,12.97s5.87,13.08,12.98,13.08,12.97-5.87,12.97-12.98-5.76-13.08-12.97-13.08h0Z"/>
+              <path fill={fillColor} d="M162.65,78.26h-2.5c-1.44,0-2.58-1.13-2.58-2.57s1.13-2.57,2.58-2.57h2.5c1.44,0,2.58,1.13,2.58,2.57s-1.14,2.57-2.58,2.57Z"/>
+            </g>
+            <path fill={fillColor} d="M165.43,100.93h-8.69c-1.37,0-2.49-1.12-2.49-2.49s1.12-2.49,2.49-2.49h8.69c1.37,0,2.49,1.12,2.49,2.49s-1.12,2.49-2.49,2.49Z"/>
+            <path fill={fillColor} d="M199.41,100.93h-10.23c-1.38,0-2.49-1.12-2.49-2.49s1.11-2.49,2.49-2.49h10.23c1.37,0,2.48,1.12,2.48,2.49s-1.11,2.49-2.48,2.49Z"/>
+            <path fill={fillColor} d="M139.51,115.04s0,0,0-.01c0,0,0,0,0-.01v-2.5h-5.68v.02H52.03c-1.37,0-2.49,1.12-2.49,2.49s1.11,2.49,2.49,2.49h84.49s.08-.02.13-.03h2.86v-2.45Z"/>
+            <path fill={fillColor} d="M307.96,112.54h-85.65v-.02h-5.17v2.4s-.02.08-.02.11c0,.04.01.07.02.11v2.35h2.34s.08.03.13.03h88.35c1.37,0,2.49-1.12,2.49-2.49s-1.11-2.49-2.49-2.49Z"/>
+          </g>
+        </svg>
+      );
+    };
+
+    const colors = { cobalt: '#0057B8', cerulean: '#1399CC', magenta: '#E10098', nearlyBlack: '#101010' };
+
+    const familyKeywords = [
+      { kw: 'family photography near me', vol: 170, kd: 4, cpc: 0.66, p: 'HIGH' },
+      { kw: 'family photographer near me', vol: 170, kd: 8, cpc: 0.72, p: 'HIGH' },
+      { kw: 'family photos ottawa', vol: 90, kd: 8, cpc: 0.52, p: 'HIGH' },
+      { kw: 'family photographer ottawa', vol: 110, kd: 11, cpc: 0.47, p: 'HIGH' },
+      { kw: 'family photoshoot near me', vol: 260, kd: 12, cpc: 0.54, p: 'HIGH' },
+      { kw: 'ottawa family photographer', vol: 110, kd: 13, cpc: 0.47, p: 'HIGH' },
+      { kw: 'family photo session', vol: 140, kd: 0, cpc: 0.54, p: 'HIGH' },
+      { kw: 'family photo studio near me', vol: 140, kd: 0, cpc: 0.51, p: 'HIGH' },
+      { kw: 'family pictures ottawa', vol: 90, kd: 20, cpc: 0.52, p: 'MEDIUM' },
+      { kw: 'family photography ottawa', vol: 70, kd: 25, cpc: 0.57, p: 'MEDIUM' },
+      { kw: 'family portrait studio', vol: 390, kd: 26, cpc: 0.64, p: 'MEDIUM' },
+      { kw: 'family photos', vol: 1600, kd: 33, cpc: 0.58, p: 'LONG' },
+    ];
+
+    const headshotKeywords = [
+      { kw: 'ottawa headshot photographer', vol: 50, kd: 6, cpc: 1.07, p: 'HIGH' },
+      { kw: 'headshots ottawa', vol: 170, kd: 8, cpc: 1.34, p: 'HIGH' },
+      { kw: 'headshot photography near me', vol: 110, kd: 14, cpc: 1.24, p: 'HIGH' },
+      { kw: 'professional headshot near me', vol: 90, kd: 16, cpc: 1.3, p: 'HIGH' },
+      { kw: 'team headshots', vol: 20, kd: 0, cpc: 2.51, p: 'HIGH' },
+      { kw: 'corporate portraits', vol: 30, kd: 0, cpc: 0.0, p: 'HIGH' },
+      { kw: 'executive headshots', vol: 30, kd: 0, cpc: 2.72, p: 'HIGH' },
+      { kw: 'professional headshots', vol: 1900, kd: 22, cpc: 1.52, p: 'MEDIUM' },
+      { kw: 'headshot photographer', vol: 170, kd: 23, cpc: 1.21, p: 'MEDIUM' },
+      { kw: 'linkedin headshots', vol: 260, kd: 39, cpc: 1.07, p: 'LONG' },
+      { kw: 'corporate photography', vol: 140, kd: 47, cpc: 1.45, p: 'LONG' },
+      { kw: 'business headshots', vol: 260, kd: 50, cpc: 2.58, p: 'LONG' },
+    ];
+
+    const hockeyKeywords = [
+      { kw: 'hockey team photos', vol: 140, kd: 0, cpc: 0.0, p: 'HIGH' },
+      { kw: 'hockey photography', vol: 110, kd: 7, cpc: 1.0, p: 'HIGH' },
+      { kw: 'hockey photographer', vol: 20, kd: 0, cpc: 0.61, p: 'HIGH' },
+      { kw: 'youth hockey photography', vol: 20, kd: 0, cpc: 0.0, p: 'HIGH' },
+      { kw: 'hockey portrait', vol: 20, kd: 0, cpc: 0.0, p: 'HIGH' },
+      { kw: 'hockey media day', vol: 20, kd: 0, cpc: 0.0, p: 'HIGH' },
+      { kw: 'photographe hockey', vol: 20, kd: 0, cpc: 0.0, p: 'HIGH' },
+      { kw: 'hockey player photoshoot', vol: 210, kd: 25, cpc: 0.0, p: 'MEDIUM' },
+    ];
+
+    const petKeywords = [
+      { kw: 'pet photoshoot', vol: 90, kd: 16, cpc: 1.23, p: 'HIGH' },
+      { kw: 'dog photoshoot', vol: 720, kd: 24, cpc: 1.42, p: 'HIGH' },
+      { kw: 'dog photography', vol: 260, kd: 30, cpc: 0.64, p: 'MEDIUM' },
+      { kw: 'pet photography near me', vol: 140, kd: 38, cpc: 0.0, p: 'LONG' },
+      { kw: 'pet photography', vol: 260, kd: 40, cpc: 0.86, p: 'LONG' },
+      { kw: 'pet portraits', vol: 1300, kd: 56, cpc: 1.13, p: 'LONG' },
+    ];
+
+    const localKeywords = [
+      { kw: 'photographe gatineau', vol: 210, kd: 24, cpc: 0.69, p: 'HIGH' },
+      { kw: 'photographers near me', vol: 1000, kd: 18, cpc: 0.98, p: 'MEDIUM' },
+      { kw: 'portrait photographer', vol: 170, kd: 26, cpc: 0.93, p: 'MEDIUM' },
+      { kw: 'photographer near me', vol: 2400, kd: 28, cpc: 0.97, p: 'MEDIUM' },
+      { kw: 'photography ottawa', vol: 210, kd: 36, cpc: 1.18, p: 'LONG' },
+      { kw: 'ottawa photographer', vol: 260, kd: 40, cpc: 1.29, p: 'LONG' },
+    ];
+
+    const KDBar = ({ value }) => {
+      let bgColor = colors.cerulean;
+      if (value > 30) bgColor = '#EF4444';
+      else if (value > 15) bgColor = colors.magenta;
+      return (
+        <div className="flex items-center gap-2">
+          <div className="w-20 h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div className="h-full" style={{ width: `${Math.min(value, 100)}%`, backgroundColor: bgColor }} />
+          </div>
+          <span className="text-xs font-medium text-slate-700 w-8">{value}</span>
+        </div>
+      );
+    };
+
+    const PriorityBadge = ({ priority }) => {
+      const styles = { HIGH: 'bg-blue-100 text-blue-900', MEDIUM: 'bg-pink-100 text-pink-900', LONG: 'bg-slate-100 text-slate-900' };
+      const labels = { HIGH: 'Quick Win', MEDIUM: 'Growth', LONG: 'Long-term' };
+      return <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${styles[priority]}`}>{labels[priority]}</span>;
+    };
+
+    const KeywordTable = ({ keywords, title, insight }) => (
+      <div className="bg-white rounded-xl border border-slate-200 p-8 mb-8">
+        <h3 className="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
+        <p className="text-slate-600 mb-6 leading-relaxed">{insight}</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b-2" style={{ backgroundColor: colors.cobalt }}>
+                <th className="px-4 py-3 text-left text-white font-semibold">Keyword</th>
+                <th className="px-4 py-3 text-center text-white font-semibold">Volume</th>
+                <th className="px-4 py-3 text-center text-white font-semibold">KD</th>
+                <th className="px-4 py-3 text-center text-white font-semibold">CPC</th>
+                <th className="px-4 py-3 text-center text-white font-semibold">Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              {keywords.map((kw, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                  <td className="px-4 py-3 font-medium text-slate-900">{kw.kw}</td>
+                  <td className="px-4 py-3 text-center text-slate-700">{kw.vol}</td>
+                  <td className="px-4 py-3 text-center"><KDBar value={kw.kd} /></td>
+                  <td className="px-4 py-3 text-center text-slate-700">${kw.cpc.toFixed(2)}</td>
+                  <td className="px-4 py-3 text-center"><PriorityBadge priority={kw.p} /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+
+    const contentCalendar = [
+      { month: 'March 2026', phase: 'Phase 1: Hockey & Family Quick Wins', posts: [
+        { title: 'What to Expect at a Hockey Team Photo Day', keywords: 'hockey team photos, hockey media day (KD 0)', target: '/hockey' },
+        { title: 'The Ultimate Guide to Hockey Photography: Capturing the Game', keywords: 'hockey photography, hockey photographer (KD 0–7)', target: '/hockey' },
+        { title: 'Family Photo Outfit Ideas: What to Wear for Your Ottawa Session', keywords: 'family photo outfit ideas (720/mo), family photoshoot clothes ideas (720/mo)', target: '/family' },
+        { title: 'Why Aylmer Is the Perfect Backdrop for Family Portraits', keywords: 'family photos ottawa, family photographer ottawa (KD 8–11)', target: '/family' },
+      ]},
+      { month: 'April 2026', phase: 'Phase 1: Headshots & Hockey', posts: [
+        { title: 'How to Prepare for Professional Headshots: A Complete Guide', keywords: 'headshots ottawa, headshot photography near me (KD 8–14)', target: '/corporate' },
+        { title: 'Youth Hockey Photography: Tips for Parents and Coaches', keywords: 'youth hockey photography, hockey portrait (KD 0)', target: '/hockey' },
+        { title: 'Team Headshots: Why Every Business Needs Updated Group Photos', keywords: 'team headshots, corporate portraits (KD 0)', target: '/corporate' },
+        { title: 'Behind the Lens: A Day at Robinson Arena Hockey Media Day', keywords: 'hockey media day, hockey team photos (KD 0)', target: '/hockey' },
+      ]},
+      { month: 'May 2026', phase: 'Phase 1/2 Transition: Pets & Family', posts: [
+        { title: 'Why Your Pet Deserves a Professional Photoshoot', keywords: 'pet photoshoot, dog photoshoot (KD 16–24)', target: '/pets' },
+        { title: 'Spring Family Photo Sessions in Ottawa-Gatineau: Booking Guide', keywords: 'family photoshoot near me, family photo session (KD 0–12)', target: '/family' },
+        { title: 'Executive Headshots: Making the Right First Impression', keywords: 'executive headshots, professional headshot near me (KD 0–16)', target: '/corporate' },
+        { title: 'From Vet Tech to Pet Photographer: My Journey with Animals', keywords: 'pet photography, dog photography (KD 24–30)', target: '/pets' },
+      ]},
+      { month: 'June 2026', phase: 'Phase 2: Growth Keywords', posts: [
+        { title: 'Photographe à Gatineau : Guide complet pour vos portraits de famille', keywords: 'photographe gatineau (210/mo, KD 24)', target: '/fr-ca pages' },
+        { title: 'The Best Dog Photoshoot Ideas for Every Breed', keywords: 'dog photoshoot (720/mo, KD 24), animal photoshoot', target: '/pets' },
+        { title: 'How to Choose the Right Photographer Near You', keywords: 'photographer near me (2,400/mo), photographers near me (1,000/mo)', target: 'Sitewide' },
+        { title: 'Hockey Player Portraits: From Ice to Studio', keywords: 'hockey player photoshoot (210/mo, KD 25)', target: '/hockey' },
+      ]},
+      { month: 'July 2026', phase: 'Phase 2: Bilingual & Cross-Service', posts: [
+        { title: 'Séance photo professionnelle : comment bien se préparer', keywords: 'photo professionnelle (880/mo), photographe professionnel', target: '/fr-ca pages' },
+        { title: "Including Your Pets in Family Photos: Tips from a Vet-Turned-Photographer", keywords: 'family photography with dogs (70/mo), family portrait with dog', target: '/family + /pets' },
+        { title: 'Summer Mini Sessions in Ottawa: What You Need to Know', keywords: 'family photography ottawa, family pictures ottawa (KD 20–25)', target: '/family' },
+        { title: "LinkedIn Headshots That Get You Noticed: A Photographer's Guide", keywords: 'linkedin headshots (260/mo, KD 39), professional headshots (1,900/mo)', target: '/corporate' },
+      ]},
+      { month: 'August 2026', phase: 'Phase 2/3: Authority Building', posts: [
+        { title: 'The Complete Guide to Pet Portraits: From Playful to Regal', keywords: 'pet portraits (1,300/mo, KD 56), pet photography (KD 40)', target: '/pets' },
+        { title: 'Back-to-School Family Photos: Capture the Moment', keywords: 'family photos (1,600/mo, KD 33), fall family photos (880/mo)', target: '/family' },
+        { title: "Photography in Ottawa: Your Guide to the City's Best Photographers", keywords: 'photography ottawa (KD 36), ottawa photographer (KD 40)', target: 'Sitewide' },
+        { title: 'Why Every Business Needs Professional Corporate Photography', keywords: 'corporate photography (KD 47), business headshots (KD 50)', target: '/corporate' },
+      ]},
+    ];
+
+    function KeywordResearchReport() {
+      const volumeData = [
+        { name: 'Family', volume: 3350, fill: colors.cobalt },
+        { name: 'Headshots', volume: 5100, fill: colors.cerulean },
+        { name: 'Hockey', volume: 560, fill: colors.magenta },
+        { name: 'Pets', volume: 2770, fill: colors.cobalt },
+        { name: 'Local', volume: 4250, fill: colors.cerulean },
+      ];
+      const categoryBreakdown = [
+        { name: 'Family', high: 8, med: 3, long: 1 },
+        { name: 'Headshots', high: 7, med: 2, long: 3 },
+        { name: 'Hockey', high: 7, med: 1, long: 0 },
+        { name: 'Pets', high: 2, med: 1, long: 3 },
+        { name: 'Local', high: 1, med: 3, long: 2 },
+      ];
+      const clientCompetitors = [
+        { name: 'saramcconnell.ca', focus: 'Family, Maternity, Headshots', kws: '~50', top: 'family photography ottawa (#2)', threat: 'High' },
+        { name: 'mathieu-photo.com', focus: 'Portraits, Weddings (EN/FR)', kws: '~50', top: 'photographe gatineau (#1)', threat: 'High' },
+        { name: 'isabellebuckleyphotography.ca', focus: 'Family, Wedding', kws: '~50', top: 'family photographer ottawa (#2)', threat: 'High' },
+        { name: 'gillianmccollphotos.com', focus: 'Newborn, Maternity, Family', kws: '~50', top: 'ottawa newborn photographer (#2)', threat: 'Medium' },
+        { name: 'lexinephotographie.com', focus: 'Wedding, Hockey', kws: '~50', top: 'hockey team photos (#13)', threat: 'Medium' },
+        { name: 'clicplus.ca', focus: 'Youth Sports Galleries', kws: '~23', top: 'Mostly branded traffic', threat: 'Low' },
+      ];
+      const semrushCompetitors = [
+        { name: 'melissagauthier.ca', relevance: 0.62, kws: 147, traffic: 97, overlap: 'Gillian, Sara, Isabelle' },
+        { name: 'kaylaphotography.ca', relevance: 0.42, kws: 134, traffic: 503, overlap: 'Gillian, Sara, Mathieu' },
+        { name: 'ofwilddawnphotography.com', relevance: 0.43, kws: 60, traffic: 145, overlap: 'Isabelle, Mathieu' },
+        { name: 'samparkphotography.com', relevance: 0.39, kws: 85, traffic: 174, overlap: 'Mathieu, Gillian' },
+        { name: 'joeyrudd.ca', relevance: 0.17, kws: 342, traffic: 781, overlap: 'Mathieu' },
+        { name: 'diamondviewphotography.com', relevance: 0.52, kws: 94, traffic: 4, overlap: 'Gillian, Sara' },
+        { name: 'jessicabarnett.ca', relevance: 0.27, kws: 89, traffic: 118, overlap: 'Isabelle' },
+        { name: 'gtasportsphotography.com', relevance: 0.08, kws: 98, traffic: 416, overlap: 'Lexine (sports)' },
+      ];
+
+      return (
+        <div className="w-full bg-slate-50">
+          <div className="w-full py-20 text-white relative" style={{ background: `linear-gradient(135deg, ${colors.cobalt} 0%, ${colors.cerulean} 100%)` }}>
+            <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+              <div className="flex items-center justify-between mb-12 gap-8">
+                <InklineLogo color="#fff" size="lg" />
+                <ARPLogo variant="white" className="h-24" />
+              </div>
+              <h1 className="text-5xl font-bold mb-2">Keyword Research & SEO Opportunity Report</h1>
+              <p className="text-xl opacity-95">aliciariddle.ca — February 2026</p>
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 -mt-16 relative z-10 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-md">
+                <div className="text-3xl font-bold text-slate-900 mb-1">44</div>
+                <div className="text-sm text-slate-600">Total Keywords</div>
+                <div className="text-xs text-slate-500 mt-1">across 5 categories</div>
+              </div>
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-md" style={{ borderTopColor: colors.cerulean, borderTopWidth: '4px' }}>
+                <div className="text-3xl font-bold" style={{ color: colors.cerulean }}>25</div>
+                <div className="text-sm text-slate-600">Quick Win Keywords</div>
+                <div className="text-xs text-slate-500 mt-1">KD 0–15, 1–3 months</div>
+              </div>
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-md" style={{ borderTopColor: colors.magenta, borderTopWidth: '4px' }}>
+                <div className="text-3xl font-bold" style={{ color: colors.magenta }}>0</div>
+                <div className="text-sm text-slate-600">Current Rankings</div>
+                <div className="text-xs text-slate-500 mt-1">brand-new site — all opportunity</div>
+              </div>
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-md" style={{ borderTopColor: colors.cerulean, borderTopWidth: '4px' }}>
+                <div className="text-3xl font-bold" style={{ color: colors.cerulean }}>7/8</div>
+                <div className="text-sm text-slate-600">Blue Ocean: Hockey</div>
+                <div className="text-xs text-slate-500 mt-1">keywords at KD 0</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-16">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-4" style={{ backgroundColor: colors.cobalt }}>1</span>
+                Executive Summary
+              </h2>
+              <div className="prose prose-sm max-w-none mb-6 text-slate-700 leading-relaxed">
+                <p>Alicia Riddle Photography is a brand-new studio offering family, corporate headshots, hockey, and pet photography services in the Ottawa-Gatineau market. The site is positioned to compete in a crowded family photography space, but possesses unique advantages in two underserved niches: hockey team photography and pet photography (leveraging Alicia's vet tech background).</p>
+                <p>This keyword research analyzed 44 high-potential search terms across five service categories using Semrush's competitive intelligence suite. We identified 25 "quick win" keywords achievable within 1–3 months through on-page optimization alone, and discovered a true blue ocean in hockey photography—an 8-keyword cluster with zero keyword difficulty.</p>
+              </div>
+              <div className="border-l-4 p-6 rounded-r-lg" style={{ borderColor: colors.magenta, backgroundColor: 'rgba(225, 0, 152, 0.05)' }}>
+                <p className="font-semibold text-slate-900 mb-2">Bottom Line</p>
+                <p className="text-slate-700 leading-relaxed">Hockey photography is a true blue ocean — virtually zero competition. Combined with achievable headshot and family keywords, Alicia can realistically rank for 19+ keywords within 3 months through on-page optimization alone.</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-4" style={{ backgroundColor: colors.cobalt }}>2</span>
+                Competitive Landscape
+              </h2>
+
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Direct Competitors (Client-Facing)</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr style={{ backgroundColor: colors.cerulean }}>
+                        <th className="px-4 py-3 text-left text-white font-semibold">Competitor</th>
+                        <th className="px-4 py-3 text-left text-white font-semibold">Service Focus</th>
+                        <th className="px-4 py-3 text-center text-white font-semibold">Keywords</th>
+                        <th className="px-4 py-3 text-left text-white font-semibold">Top Ranking</th>
+                        <th className="px-4 py-3 text-center text-white font-semibold">Threat Level</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {clientCompetitors.map((comp, idx) => (
+                        <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                          <td className="px-4 py-3 font-medium text-slate-900">{comp.name}</td>
+                          <td className="px-4 py-3 text-slate-700">{comp.focus}</td>
+                          <td className="px-4 py-3 text-center text-slate-700">{comp.kws}</td>
+                          <td className="px-4 py-3 text-slate-700">{comp.top}</td>
+                          <td className="px-4 py-3 text-center">
+                            <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${comp.threat === 'High' ? 'bg-red-100 text-red-900' : comp.threat === 'Medium' ? 'bg-yellow-100 text-yellow-900' : 'bg-green-100 text-green-900'}`}>
+                              {comp.threat}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Semrush Competitive Set (Top Relevance)</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr style={{ backgroundColor: colors.cerulean }}>
+                        <th className="px-4 py-3 text-left text-white font-semibold">Site</th>
+                        <th className="px-4 py-3 text-center text-white font-semibold">Relevance</th>
+                        <th className="px-4 py-3 text-center text-white font-semibold">Keywords</th>
+                        <th className="px-4 py-3 text-center text-white font-semibold">Monthly Traffic</th>
+                        <th className="px-4 py-3 text-left text-white font-semibold">Shared Competitors</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {semrushCompetitors.map((comp, idx) => (
+                        <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                          <td className="px-4 py-3 font-medium text-slate-900">{comp.name}</td>
+                          <td className="px-4 py-3 text-center text-slate-700">{(comp.relevance * 100).toFixed(0)}%</td>
+                          <td className="px-4 py-3 text-center text-slate-700">{comp.kws}</td>
+                          <td className="px-4 py-3 text-center text-slate-700">{comp.traffic}</td>
+                          <td className="px-4 py-3 text-slate-700 text-xs">{comp.overlap}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 rounded-lg p-6 mb-8">
+                <h4 className="font-bold text-slate-900 mb-4">Competitive Positioning Radar</h4>
+                <ChartComponent type="radar" height={400} data={{
+                  labels: ['Family', 'Hockey', 'Pets', 'Headshots', 'Bilingual', 'Local SEO'],
+                  datasets: [
+                    { label: 'Alicia (You)', data: [0, 0, 0, 0, 0, 0], borderColor: '#0057B8', backgroundColor: 'rgba(0,87,184,0.1)', borderWidth: 2 },
+                    { label: 'Sara McConnell', data: [80, 0, 0, 60, 0, 70], borderColor: '#1399CC', backgroundColor: 'rgba(19,153,204,0.1)', borderWidth: 2 },
+                    { label: 'Mathieu Photo', data: [40, 0, 0, 55, 90, 75], borderColor: '#E10098', backgroundColor: 'rgba(225,0,152,0.1)', borderWidth: 2 },
+                    { label: 'Isabelle Buckley', data: [85, 0, 0, 20, 0, 65], borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.1)', borderWidth: 2 },
+                  ]
+                }} options={{
+                  responsive: true,
+                  scales: { r: { beginAtZero: true, max: 100, grid: { color: '#e2e8f0' }, pointLabels: { font: { size: 12 } } } },
+                  plugins: { legend: { position: 'bottom' } }
+                }} />
+                <p className="text-xs text-slate-600 mt-4">Radar shows relative competitive strength by service category (0–100 scale). Hockey, pets, and bilingual content are your competitive advantages.</p>
+              </div>
+
+              <div className="border-l-4 p-6 rounded-r-lg" style={{ borderColor: colors.magenta, backgroundColor: 'rgba(225, 0, 152, 0.05)' }}>
+                <p className="font-semibold text-slate-900 mb-2">Key Insight</p>
+                <p className="text-slate-700 leading-relaxed">The local competitive set averages 50+ ranked keywords and 100–500 monthly visits each. However, no competitor has a significant presence in hockey photography. Sara and Isabelle dominate family photography; Mathieu dominates bilingual SEO. Your differentiation lies in hockey + pet photography + bilingual expansion.</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-4" style={{ backgroundColor: colors.cobalt }}>3</span>
+                Keyword Opportunities
+              </h2>
+
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-slate-900 mb-6">Search Volume by Category</h3>
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <ChartComponent type="bar" height={300} data={{
+                    labels: ['Family', 'Headshots', 'Hockey', 'Pets', 'Local'],
+                    datasets: [{
+                      label: 'Monthly Search Volume',
+                      data: [3350, 5100, 560, 2770, 4250],
+                      backgroundColor: ['#0057B8', '#1399CC', '#E10098', '#0057B8', '#1399CC'],
+                      borderRadius: 6,
+                    }]
+                  }} options={{
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true, grid: { color: '#e2e8f0' } }, x: { grid: { display: false } } }
+                  }} />
+                </div>
+                <p className="text-sm text-slate-600 mt-4">Headshots and Local categories have the highest combined search volume. Hockey is niche but uncontested.</p>
+              </div>
+
+              <div className="mb-12">
+                <h3 className="text-xl font-bold text-slate-900 mb-6">Priority Distribution by Category</h3>
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <ChartComponent type="bar" height={300} data={{
+                    labels: ['Family', 'Headshots', 'Hockey', 'Pets', 'Local'],
+                    datasets: [
+                      { label: 'Quick Win (KD 0-15)', data: [8, 7, 7, 2, 1], backgroundColor: '#0057B8' },
+                      { label: 'Growth (KD 16-30)', data: [3, 2, 1, 1, 3], backgroundColor: '#E10098' },
+                      { label: 'Long-term (KD 31+)', data: [1, 3, 0, 3, 2], backgroundColor: '#cbd5e1' },
+                    ]
+                  }} options={{
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                      x: { stacked: true, grid: { color: '#e2e8f0' } },
+                      y: { stacked: true, grid: { display: false } }
+                    },
+                    plugins: { legend: { position: 'bottom' } }
+                  }} />
+                </div>
+                <p className="text-sm text-slate-600 mt-4">Hockey has the highest ratio of quick-win keywords (7 of 8). Family and Headshots are balanced across all priority levels.</p>
+              </div>
+
+              <KeywordTable keywords={familyKeywords} title="Family Photography Keywords" insight="Family photography is the largest market opportunity (3,350 total monthly volume). Eight keywords are achievable quick wins with KD ≤15. Focus on local modifiers ('near me', 'ottawa') and seasonal angles ('family photo outfit ideas'). Family portraits is competitive but has solid volume." />
+
+              <KeywordTable keywords={headshotKeywords} title="Corporate Headshot Keywords" insight="Headshots have the highest CPC ($1.07–$2.72) and strong volume. Three quick-win keywords (team headshots, corporate portraits, executive headshots) are all KD 0. LinkedIn headshots and business headshots are competitive but valuable for professional targeting." />
+
+              <KeywordTable keywords={hockeyKeywords} title="Hockey Photography Keywords (BLUE OCEAN)" insight="This is the standout category: 7 of 8 keywords have KD 0. Hockey team photos (140 vol/mo), hockey photography (110 vol/mo), and hockey photographer are immediate ranking opportunities. The local hockey community is underserved—this is your fastest path to visibility." />
+
+              <KeywordTable keywords={petKeywords} title="Pet Photography Keywords" insight="Pet portraits (1,300/mo, KD 56) is competitive but valuable long-term. Dog photoshoot (720/mo, KD 24) and pet photoshoot (90/mo, KD 16) are faster wins. This category benefits from Alicia's unique vet tech background—emphasize animal welfare and stress-free experiences." />
+
+              <KeywordTable keywords={localKeywords} title="Local & Bilingual Keywords" insight="Photographe gatineau (210/mo, KD 24) is a solid quick win on the French side. Photographer near me (2,400/mo) and photographers near me (1,000/mo) have high volume but moderate KD. Local SEO optimization (Google Business Profile, local schema, citations) is critical here." />
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-4" style={{ backgroundColor: colors.cobalt }}>4</span>
+                3-Phase Implementation Strategy
+              </h2>
+
+              <div className="space-y-6">
+                <div className="border-l-4 p-6 rounded-r-lg" style={{ borderColor: colors.cobalt, backgroundColor: 'rgba(0, 87, 184, 0.05)' }}>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Phase 1: Quick Wins (Weeks 1–6, March 2026)</h3>
+                  <p className="text-slate-700 leading-relaxed mb-4"><span className="font-semibold">Target:</span> 10–12 rankings (KD 0–15 keywords across Hockey, Family, and Headshots)</p>
+                  <ul className="list-disc list-inside text-slate-700 space-y-2">
+                    <li>Launch 5 new pages: /hockey, /hockey/media-days, /family, /corporate, /pets</li>
+                    <li>On-page optimization: target keywords in title, H1, meta description, image alt text, 2–3 internal links per page</li>
+                    <li>Publish 4 blog posts (hockey, family, headshots, pets): 1,000–1,500 words, keyword-rich, service-linked</li>
+                    <li>Build local SEO: Complete Google Business Profile, add location schema, local citations (Yelp, BNI, chamber)</li>
+                    <li>Win 5–8 hockey keywords (all KD 0), 3–4 family quick wins, 2–3 headshot quick wins</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 p-6 rounded-r-lg" style={{ borderColor: colors.cerulean, backgroundColor: 'rgba(19, 153, 204, 0.05)' }}>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Phase 2: Growth & Authority (Weeks 7–14, April–June 2026)</h3>
+                  <p className="text-slate-700 leading-relaxed mb-4"><span className="font-semibold">Target:</span> 8–10 additional rankings (KD 16–30 keywords); build authority and bilingual presence</p>
+                  <ul className="list-disc list-inside text-slate-700 space-y-2">
+                    <li>Publish 12 blog posts over 8 weeks (1–2 per week) targeting mid-difficulty keywords and seasonal themes</li>
+                    <li>French-language optimization: Publish 3–4 French blog posts (photographe gatineau, séance photo), build FR landing pages</li>
+                    <li>Link building: 10–15 local directory placements (photography directories, Ottawa business sites), 1–2 press mentions</li>
+                    <li>Content cross-linking: Build topic clusters (family + seasons, pets + unique angle, headshots + industry verticals)</li>
+                    <li>Video strategy: 3–4 short portfolio or process videos (YouTube/Instagram), optimized for SEO</li>
+                    <li>Win 3–4 dog/pet keywords, 2–3 family growth keywords, 2–3 headshot growth keywords, 1–2 bilingual keywords</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 p-6 rounded-r-lg" style={{ borderColor: colors.magenta, backgroundColor: 'rgba(225, 0, 152, 0.05)' }}>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">Phase 3: Authority & Expansion (Weeks 15+, July 2026+)</h3>
+                  <p className="text-slate-700 leading-relaxed mb-4"><span className="font-semibold">Target:</span> Establish topical authority; rank for high-volume, high-competition keywords (KD 30+)</p>
+                  <ul className="list-disc list-inside text-slate-700 space-y-2">
+                    <li>Publish 2–3 authoritative pillar content pieces (1,500–2,500 words) per quarter: "Complete Guide to [Topic]"</li>
+                    <li>Build backlinks via guest posting, partnerships with local influencers, press coverage, industry awards</li>
+                    <li>Create multimedia content: webinars, interactive tools (outfit chooser for families, pose guide for headshots)</li>
+                    <li>Expand French SEO: Full bilingual site architecture, FR blog publishing 2x/month</li>
+                    <li>Long-tail targeting: Create content for hyper-local and specific niche searches (e.g., 'hockey media day in orleans', 'dog portraits for senior dogs')</li>
+                    <li>Target: 5–10 long-tail and competitive keywords (KD 30–50)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-4" style={{ backgroundColor: colors.cobalt }}>5</span>
+                6-Month Content Calendar (March–August 2026)
+              </h2>
+
+              {contentCalendar.map((month, idx) => (
+                <div key={idx} className="mb-8 border rounded-lg p-6" style={{ borderColor: colors.cerulean }}>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{month.month}</h3>
+                  <p className="text-sm text-slate-600 mb-4 font-semibold">{month.phase}</p>
+                  <div className="space-y-4">
+                    {month.posts.map((post, pidx) => (
+                      <div key={pidx} className="bg-slate-50 rounded p-4">
+                        <p className="font-semibold text-slate-900 mb-2">{post.title}</p>
+                        <p className="text-xs text-slate-600 mb-1"><span className="font-medium">Keywords:</span> {post.keywords}</p>
+                        <p className="text-xs text-slate-600"><span className="font-medium">Target Page:</span> {post.target}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              <div className="border-l-4 p-6 rounded-r-lg" style={{ borderColor: colors.magenta, backgroundColor: 'rgba(225, 0, 152, 0.05)' }}>
+                <p className="font-semibold text-slate-900 mb-2">Content Strategy Notes</p>
+                <ul className="list-disc list-inside text-slate-700 space-y-2 text-sm">
+                  <li>Each blog post should be 1,000–1,500 words and link to at least 2–3 relevant service pages internally</li>
+                  <li>Publish 4 posts per month (1 per week) during Phases 1–2, scaling to 8 posts per month in Phase 3</li>
+                  <li>Seasonal angles (e.g., spring family photos, back-to-school) capture demand spikes and improve click-through rates</li>
+                  <li>Cross-service posts (e.g., "Family + Pets", "Hockey + Headshots") deepen topic clusters and internal linking</li>
+                  <li>French content targets bilingual Ottawa-Gatineau audience; Mathieu-photo.com is your primary FR SEO competitor</li>
+                  <li>Use Alicia's vet tech background as a unique angle for pet photography—emphasize stress-free, animal-first approach</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <span className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-4" style={{ backgroundColor: colors.cobalt }}>6</span>
+                Recommended Next Steps (Immediate Actions)
+              </h2>
+
+              <div className="space-y-6">
+                <div className="border rounded-lg p-6 border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3" style={{ backgroundColor: colors.cobalt }}>1</span>
+                    Set Up Google Business Profile & Local SEO (Week 1)
+                  </h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 text-sm">
+                    <li>Claim and optimize GBP for aliciariddle.ca with full details, high-quality photos, service categories</li>
+                    <li>Add local schema (LocalBusiness, Service) to homepage</li>
+                    <li>Create local citations on Yelp, BNI, Ottawa Chamber of Commerce, Google Maps</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-6 border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3" style={{ backgroundColor: colors.cobalt }}>2</span>
+                    Create High-Priority Service Pages (Weeks 1–2)
+                  </h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 text-sm">
+                    <li>/hockey: 800+ words, target 'hockey photography', 'hockey photographer', 'hockey team photos'</li>
+                    <li>/family: 800+ words, target 'family photography near me', 'family photos ottawa'</li>
+                    <li>/corporate or /headshots: 800+ words, target 'headshots ottawa', 'professional headshots'</li>
+                    <li>Include unique USP (vet tech background for pets, local community focus for hockey)</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-6 border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3" style={{ backgroundColor: colors.cobalt }}>3</span>
+                    Launch Blog & Publish First 4 Posts (Weeks 2–3)
+                  </h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 text-sm">
+                    <li>Set up blog section with category structure (Hockey, Family, Corporate, Pets, Local)</li>
+                    <li>Publish 4 posts: 1 per category, targeting quick-win keywords (see Phase 1 content calendar)</li>
+                    <li>Each post: 1,000–1,500 words, keyword-rich, 2–3 internal links to service pages</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-6 border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3" style={{ backgroundColor: colors.cobalt }}>4</span>
+                    Set Up SEO Tools & Analytics (Week 1)
+                  </h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 text-sm">
+                    <li>Link Semrush or Ahrefs account to site; set up daily ranking tracking for all 44 keywords</li>
+                    <li>Install Google Analytics 4 and Google Search Console; link to Google Business Profile</li>
+                    <li>Set up monthly reporting to track progress against Phase targets (see benchmarks above)</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-6 border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3" style={{ backgroundColor: colors.cobalt }}>5</span>
+                    Plan French-Language Expansion (Weeks 3–4)
+                  </h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 text-sm">
+                    <li>Audit current bilingual capabilities; plan site structure (separate /fr-ca/ paths or hreflang)</li>
+                    <li>Draft 2–3 French blog posts for publication in April (photographe gatineau, séance photo, etc.)</li>
+                    <li>Hire French copywriter or translator if needed; ensure native-level French writing</li>
+                  </ul>
+                </div>
+
+                <div className="border rounded-lg p-6 border-slate-200">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3" style={{ backgroundColor: colors.cobalt }}>6</span>
+                    Build Initial Backlink Strategy (Weeks 2–4)
+                  </h3>
+                  <ul className="list-disc list-inside text-slate-700 space-y-1 text-sm">
+                    <li>Reach out to 10–15 local directories and photography websites for links</li>
+                    <li>Claim existing mentions (Inkline portfolio, school photography directories, etc.)</li>
+                    <li>Plan 2–3 guest posts for local blogs or photography industry sites (target for April–May publication)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="border-l-4 p-6 rounded-r-lg mt-8" style={{ borderColor: colors.magenta, backgroundColor: 'rgba(225, 0, 152, 0.05)' }}>
+                <p className="font-semibold text-slate-900 mb-2">Success Metrics (3-Month Check-in, May 2026)</p>
+                <ul className="list-disc list-inside text-slate-700 space-y-2 text-sm">
+                  <li><span className="font-semibold">Rankings:</span> 10–15 keywords in top 20 (5+ in top 10)</li>
+                  <li><span className="font-semibold">Traffic:</span> 300–500 monthly visits from organic search</li>
+                  <li><span className="font-semibold">Pages:</span> 5–8 optimized service pages + 8–10 blog posts live</li>
+                  <li><span className="font-semibold">Engagement:</span> Average time-on-page ≥1:30, bounce rate ≤65%</li>
+                  <li><span className="font-semibold">Conversions:</span> 5–10 inquiry-form submissions (depends on traffic)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-xl p-8 text-center text-white mt-20 mb-16" style={{ background: `linear-gradient(135deg, ${colors.cobalt} 0%, ${colors.cerulean} 100%)` }}>
+              <div className="flex items-center justify-center gap-8 mb-6">
+                <InklineLogo color="#fff" size="md" />
+                <span className="text-white opacity-50">+</span>
+                <ARPLogo variant="white" className="h-20" />
+              </div>
+              <p className="text-sm opacity-90 mb-4">Keyword Research Report • Prepared for Alicia Riddle Photography</p>
+              <p className="text-xs opacity-75">Data sourced from Semrush competitive intelligence analysis. All metrics current as of February 2026.</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<KeywordResearchReport />);
+  </script>
+</body>
+</html>
