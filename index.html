@@ -203,40 +203,213 @@
 
     const contentCalendar = [
       { month: 'March 2026', phase: 'Phase 1: Hockey & Family Quick Wins', posts: [
-        { title: 'What to Expect at a Hockey Team Photo Day', keywords: 'hockey team photos, hockey media day (KD 0)', target: '/hockey' },
-        { title: 'The Ultimate Guide to Hockey Photography: Capturing the Game', keywords: 'hockey photography, hockey photographer (KD 0–7)', target: '/hockey' },
-        { title: 'Family Photo Outfit Ideas: What to Wear for Your Ottawa Session', keywords: 'family photo outfit ideas (720/mo), family photoshoot clothes ideas (720/mo)', target: '/family' },
-        { title: 'Why Aylmer Is the Perfect Backdrop for Family Portraits', keywords: 'family photos ottawa, family photographer ottawa (KD 8–11)', target: '/family' },
+        { title: 'What to Expect at a Hockey Team Photo Day', keywords: 'hockey team photos, hockey media day (KD 0)', target: '/hockey', outline: [
+          { h2: 'How Hockey Team Photo Day Works', h3: ['Scheduling and logistics', 'What the photographer sets up'] },
+          { h2: 'What to Bring: Equipment and Jerseys', h3: ['Individual vs. team gear', 'Props that make great shots'] },
+          { h2: 'Individual Portraits vs. Team Shots', h3: ['Posing tips for individual players', 'Arranging the full team'] },
+          { h2: 'Action Shots and On-Ice Photography', h3: ['Capturing game-day energy off the ice', 'Warm-up drills as photo opportunities'] },
+          { h2: 'Tips for Parents and Coaches', h3: ['How to prep your child', 'Coordinating with the photographer'] },
+          { h2: 'What Happens After: Ordering and Delivery', h3: ['Online galleries and print options', 'Turnaround times to expect'] },
+        ]},
+        { title: 'The Ultimate Guide to Hockey Photography: Capturing the Game', keywords: 'hockey photography, hockey photographer (KD 0–7)', target: '/hockey', outline: [
+          { h2: 'Know the Game Before You Shoot', h3: ['Key moments to anticipate', 'Reading the play for better timing'] },
+          { h2: 'Essential Camera Settings for Arena Lighting', h3: ['ISO, aperture, and shutter speed for rinks', 'White balance under arena lights'] },
+          { h2: 'Best Lenses for Hockey Photography', h3: ['Zoom vs. prime for rink shooting', 'Budget-friendly options that still deliver'] },
+          { h2: 'Where to Shoot From: Positioning in the Arena', h3: ['Behind the glass vs. elevated positions', 'Avoiding common obstructions'] },
+          { h2: 'Capturing the Key Shots', h3: ['Slapshots and saves', 'Celebrations and emotion', 'Faceoffs and board battles'] },
+          { h2: 'Post-Processing Hockey Photos', h3: ['Correcting arena colour casts', 'Cropping for impact'] },
+        ]},
+        { title: 'Family Photo Outfit Ideas: What to Wear for Your Ottawa Session', keywords: 'family photo outfit ideas (720/mo), family photoshoot clothes ideas (720/mo)', target: '/family', outline: [
+          { h2: 'Start with One Outfit and Build Around It', h3: ['Choosing your anchor person', 'Coordinating (not matching) colours'] },
+          { h2: 'Best Colour Palettes by Season', h3: ['Spring pastels and florals', 'Summer earth tones and whites', 'Fall warm neutrals and jewel tones', 'Winter deep hues and layering'] },
+          { h2: 'Patterns, Textures, and Layers', h3: ['Limit bold patterns to one person', 'Use textures for visual interest', 'Layering for dimension (scarves, jackets, hats)'] },
+          { h2: 'What to Avoid', h3: ['Neon and overly bright colours', 'Character tees and logos', 'Brand-new shoes that cause blisters'] },
+          { h2: 'Dressing Kids Comfortably', h3: ['Prioritize movement and mood', 'Backup outfits for little ones'] },
+          { h2: 'Ottawa-Specific Tips', h3: ['Matching your outfit to Aylmer\u2019s greenery', 'Dressing for Gatineau Park trails', 'Indoor studio vs. outdoor session wear'] },
+        ]},
+        { title: 'Why Aylmer Is the Perfect Backdrop for Family Portraits', keywords: 'family photos ottawa, family photographer ottawa (KD 8–11)', target: '/family', outline: [
+          { h2: 'Aylmer\u2019s Hidden Gem Locations', h3: ['Waterfront paths along the Ottawa River', 'Heritage stone buildings and charming streets'] },
+          { h2: 'Golden Hour in Aylmer: Best Times to Shoot', h3: ['Seasonal light differences', 'Morning vs. evening sessions'] },
+          { h2: 'Why Aylmer Over Downtown Ottawa?', h3: ['Less crowded, more natural settings', 'Variety of backdrops in a small area'] },
+          { h2: 'Gatineau Park: Nature Sessions 15 Minutes Away', h3: ['Best trails for family photos', 'Seasonal foliage and landscapes'] },
+          { h2: 'What to Expect at an Aylmer Family Session', h3: ['Session flow and timing', 'How to keep kids engaged outdoors'] },
+          { h2: 'Book Your Aylmer Family Session', h3: [] },
+        ]},
       ]},
       { month: 'April 2026', phase: 'Phase 1: Headshots & Hockey', posts: [
-        { title: 'How to Prepare for Professional Headshots: A Complete Guide', keywords: 'headshots ottawa, headshot photography near me (KD 8–14)', target: '/corporate' },
-        { title: 'Youth Hockey Photography: Tips for Parents and Coaches', keywords: 'youth hockey photography, hockey portrait (KD 0)', target: '/hockey' },
-        { title: 'Team Headshots: Why Every Business Needs Updated Group Photos', keywords: 'team headshots, corporate portraits (KD 0)', target: '/corporate' },
-        { title: 'Behind the Lens: A Day at Robinson Arena Hockey Media Day', keywords: 'hockey media day, hockey team photos (KD 0)', target: '/hockey' },
+        { title: 'How to Prepare for Professional Headshots: A Complete Guide', keywords: 'headshots ottawa, headshot photography near me (KD 8–14)', target: '/corporate', outline: [
+          { h2: 'Why Professional Headshots Matter', h3: ['First impressions in the digital age', 'LinkedIn, company websites, and speaking bios'] },
+          { h2: 'What to Wear for Your Headshot', h3: ['Solid colours vs. patterns', 'Industry-specific dress codes', 'What to wear for women vs. men'] },
+          { h2: 'Grooming and Preparation Tips', h3: ['Hair, makeup, and skincare timeline', 'Should you get a haircut before?'] },
+          { h2: 'What Happens During the Session', h3: ['Personalized consultation beforehand', 'Posing guidance and expression coaching', 'How long a session takes'] },
+          { h2: 'Studio vs. On-Location Headshots', h3: ['Benefits of a controlled studio environment', 'Natural light on-location options in Ottawa'] },
+          { h2: 'How to Choose Your Final Image', h3: ['What makes a strong headshot', 'Retouching: what\u2019s included'] },
+          { h2: 'How Much Do Professional Headshots Cost?', h3: ['Pricing factors to consider', 'What\u2019s included in a typical session'] },
+        ]},
+        { title: 'Youth Hockey Photography: Tips for Parents and Coaches', keywords: 'youth hockey photography, hockey portrait (KD 0)', target: '/hockey', outline: [
+          { h2: 'Why Youth Hockey Photos Are Worth Investing In', h3: ['Capturing a season they\u2019ll remember', 'Team bonding through photo day'] },
+          { h2: 'Camera Settings for Parents Shooting from the Stands', h3: ['Best smartphone tips through the glass', 'Point-and-shoot vs. DSLR basics'] },
+          { h2: 'What Coaches Should Know About Photo Day', h3: ['Scheduling around practice', 'Jersey and equipment coordination'] },
+          { h2: 'Individual Portraits That Showcase Each Player', h3: ['Posing young athletes naturally', 'Helmet on vs. helmet off'] },
+          { h2: 'Action Photography at Youth Games', h3: ['Anticipating the play at kids\u2019 level', 'Dealing with slower arena lighting'] },
+          { h2: 'How to Organize a Team Photo Day', h3: ['Working with your photographer', 'Timeline and logistics that work for kids'] },
+        ]},
+        { title: 'Team Headshots: Why Every Business Needs Updated Group Photos', keywords: 'team headshots, corporate portraits (KD 0)', target: '/corporate', outline: [
+          { h2: 'The Business Case for Team Headshots', h3: ['Building trust and credibility online', 'Consistency across your website and LinkedIn'] },
+          { h2: 'How Often Should You Update Team Photos?', h3: ['New hires and departures', 'Rebranding and website refreshes'] },
+          { h2: 'On-Site vs. Studio Team Sessions', h3: ['Benefits of shooting in your office', 'Studio sessions for polished consistency'] },
+          { h2: 'Preparing Your Team for Photo Day', h3: ['Wardrobe guidelines to send in advance', 'Scheduling tips for minimal disruption'] },
+          { h2: 'Individual Headshots + Group Shots', h3: ['The "About Us" page formula', 'Arranging natural-looking group compositions'] },
+          { h2: 'What to Expect: Process and Pricing', h3: ['Per-person vs. team packages', 'Turnaround time and delivery'] },
+        ]},
+        { title: 'Behind the Lens: A Day at Robinson Arena Hockey Media Day', keywords: 'hockey media day, hockey team photos (KD 0)', target: '/hockey', outline: [
+          { h2: 'Setting the Scene: Robinson Arena', h3: ['What makes this arena special for photos', 'Equipment setup and lighting'] },
+          { h2: 'The Morning: Individual Player Portraits', h3: ['Posing athletes in full gear', 'Capturing personality on and off the ice'] },
+          { h2: 'Team Photos: Coordinating 20+ Players', h3: ['Arranging rows and positioning', 'Getting everyone looking sharp'] },
+          { h2: 'On-Ice Action Shots During Warm-Up', h3: ['Capturing speed and intensity', 'Best angles from the boards'] },
+          { h2: 'Behind-the-Scenes: What Parents Don\u2019t See', h3: ['The gear it takes', 'Working with kids between shots'] },
+          { h2: 'The Final Gallery: From Raw to Delivered', h3: ['Editing and colour correction', 'How families access their photos'] },
+        ]},
       ]},
       { month: 'May 2026', phase: 'Phase 1/2 Transition: Pets & Family', posts: [
-        { title: 'Why Your Pet Deserves a Professional Photoshoot', keywords: 'pet photoshoot, dog photoshoot (KD 16–24)', target: '/pets' },
-        { title: 'Spring Family Photo Sessions in Ottawa-Gatineau: Booking Guide', keywords: 'family photoshoot near me, family photo session (KD 0–12)', target: '/family' },
-        { title: 'Executive Headshots: Making the Right First Impression', keywords: 'executive headshots, professional headshot near me (KD 0–16)', target: '/corporate' },
-        { title: 'From Vet Tech to Pet Photographer: My Journey with Animals', keywords: 'pet photography, dog photography (KD 24–30)', target: '/pets' },
+        { title: 'Why Your Pet Deserves a Professional Photoshoot', keywords: 'pet photoshoot, dog photoshoot (KD 16–24)', target: '/pets', outline: [
+          { h2: 'More Than Just a Snapshot', h3: ['Why phone photos don\u2019t capture their full personality', 'The art of professional pet portraiture'] },
+          { h2: 'What Happens During a Pet Photo Session', h3: ['Creating a stress-free environment', 'Working at your pet\u2019s pace (a vet tech\u2019s approach)'] },
+          { h2: 'Indoor Studio vs. Outdoor Sessions', h3: ['Controlled studio lighting for portraits', 'Parks and nature for action shots'] },
+          { h2: 'Preparing Your Pet for Their Photoshoot', h3: ['Grooming timeline', 'Favourite treats and toys to bring', 'Exercise beforehand (the energy sweet spot)'] },
+          { h2: 'The Shots You\u2019ll Treasure Forever', h3: ['Classic portraits', 'Action and play moments', 'Pet-and-owner shots'] },
+          { h2: 'How Much Does a Pet Photoshoot Cost?', h3: ['Session types and packages', 'What\u2019s included in your gallery'] },
+        ]},
+        { title: 'Spring Family Photo Sessions in Ottawa-Gatineau: Booking Guide', keywords: 'family photoshoot near me, family photo session (KD 0–12)', target: '/family', outline: [
+          { h2: 'Why Spring Is Ideal for Family Photos', h3: ['Cherry blossoms and fresh greenery', 'Comfortable temperatures for kids'] },
+          { h2: 'Best Spring Locations in Ottawa-Gatineau', h3: ['Dominion Arboretum and Dow\u2019s Lake', 'Aylmer waterfront', 'Gatineau Park spring trails'] },
+          { h2: 'When to Book Your Spring Session', h3: ['Peak bloom timing (late April\u2013May)', 'Weekday vs. weekend availability'] },
+          { h2: 'What to Wear for Spring Family Photos', h3: ['Light layers and pastel palettes', 'Coordinating outfits for the whole family'] },
+          { h2: 'What to Expect: Session Flow', h3: ['Duration and number of outfit changes', 'Keeping young children engaged'] },
+          { h2: 'How to Book and What\u2019s Included', h3: ['Pricing and packages', 'Gallery delivery timeline'] },
+        ]},
+        { title: 'Executive Headshots: Making the Right First Impression', keywords: 'executive headshots, professional headshot near me (KD 0–16)', target: '/corporate', outline: [
+          { h2: 'Why Executives Need More Than a Phone Selfie', h3: ['The psychology of first impressions', 'What clients and boards look for'] },
+          { h2: 'Headshot Styles for Different Industries', h3: ['Corporate formal vs. entrepreneurial approachable', 'Tech, legal, finance, and creative differences'] },
+          { h2: 'What to Wear for an Executive Headshot', h3: ['Classic professional attire', 'Colours that photograph well', 'Grooming details that matter on camera'] },
+          { h2: 'Studio vs. Environmental Executive Portraits', h3: ['When a clean background works best', 'Using your office or boardroom as backdrop'] },
+          { h2: 'The Session Experience', h3: ['Expression coaching for natural confidence', 'Multiple looks in one session'] },
+          { h2: 'Using Your Headshot Across Platforms', h3: ['LinkedIn, company bio, press kit', 'Image sizing and format guidelines'] },
+        ]},
+        { title: 'From Vet Tech to Pet Photographer: My Journey with Animals', keywords: 'pet photography, dog photography (KD 24–30)', target: '/pets', outline: [
+          { h2: 'My Life as a Veterinary Technician', h3: ['What drew me to animal care', 'Lessons learned about animal behaviour'] },
+          { h2: 'How Vet Tech Training Makes Me a Better Photographer', h3: ['Reading body language and stress signals', 'Keeping animals calm during sessions'] },
+          { h2: 'The Moment I Picked Up the Camera', h3: ['Combining two passions', 'My first pet photography clients'] },
+          { h2: 'What Makes My Approach Different', h3: ['Animal-first, stress-free philosophy', 'Patience over perfection', 'Safety protocols from vet training'] },
+          { h2: 'Favourite Sessions and Stories', h3: ['The nervous rescue dog who opened up', 'Senior pets and legacy portraits'] },
+          { h2: 'Book a Session with Someone Who Gets Animals', h3: [] },
+        ]},
       ]},
       { month: 'June 2026', phase: 'Phase 2: Growth Keywords', posts: [
-        { title: 'Photographe à Gatineau : Guide complet pour vos portraits de famille', keywords: 'photographe gatineau (210/mo, KD 24)', target: '/fr-ca pages' },
-        { title: 'The Best Dog Photoshoot Ideas for Every Breed', keywords: 'dog photoshoot (720/mo, KD 24), animal photoshoot', target: '/pets' },
-        { title: 'How to Choose the Right Photographer Near You', keywords: 'photographer near me (2,400/mo), photographers near me (1,000/mo)', target: 'Sitewide' },
-        { title: 'Hockey Player Portraits: From Ice to Studio', keywords: 'hockey player photoshoot (210/mo, KD 25)', target: '/hockey' },
+        { title: 'Photographe \u00e0 Gatineau : Guide complet pour vos portraits de famille', keywords: 'photographe gatineau (210/mo, KD 24)', target: '/fr-ca pages', outline: [
+          { h2: 'Pourquoi choisir un photographe local \u00e0 Gatineau', h3: ['Connaissance des meilleurs emplacements', '\u00c9conomiser sur les frais de d\u00e9placement'] },
+          { h2: 'Les meilleurs endroits pour vos portraits de famille', h3: ['Parc de la Gatineau', 'Vieux-Aylmer et le bord de l\u2019eau', 'Parcs urbains et espaces verts'] },
+          { h2: 'Comment se pr\u00e9parer pour votre s\u00e9ance photo', h3: ['Choix des v\u00eatements coordonn\u00e9s', 'Pr\u00e9parer les enfants pour la s\u00e9ance'] },
+          { h2: 'Ce qui est inclus dans une s\u00e9ance', h3: ['Dur\u00e9e et nombre de photos', 'Retouches et galerie en ligne'] },
+          { h2: 'Combien co\u00fbte une s\u00e9ance photo familiale?', h3: ['Forfaits et options', 'Comparaison avec la r\u00e9gion d\u2019Ottawa'] },
+          { h2: 'R\u00e9servez votre s\u00e9ance \u00e0 Gatineau', h3: [] },
+        ]},
+        { title: 'The Best Dog Photoshoot Ideas for Every Breed', keywords: 'dog photoshoot (720/mo, KD 24), animal photoshoot', target: '/pets', outline: [
+          { h2: 'Get On Your Dog\u2019s Level', h3: ['Why perspective changes everything', 'Eye-level vs. above angles'] },
+          { h2: 'Action and Play Sessions', h3: ['Capturing fetch, zoomies, and swimming', 'Best settings for fast-moving dogs'] },
+          { h2: 'Classic Portrait Poses by Size', h3: ['Small breeds: cozy and cute setups', 'Large breeds: majestic and powerful compositions'] },
+          { h2: 'Seasonal and Holiday Themes', h3: ['Spring flowers and outdoor backdrops', 'Fall foliage and cozy blankets', 'Holiday and birthday celebrations'] },
+          { h2: 'Props and Accessories That Work', h3: ['Bandanas, bow ties, and flower crowns', 'Favourite toys for natural expressions'] },
+          { h2: 'Indoor vs. Outdoor: Choosing the Right Setting', h3: ['Studio black background for dramatic portraits', 'Parks and nature for candid energy'] },
+          { h2: 'Working with Nervous or Reactive Dogs', h3: ['A vet tech\u2019s approach to anxious pets', 'Building trust before the first click'] },
+        ]},
+        { title: 'How to Choose the Right Photographer Near You', keywords: 'photographer near me (2,400/mo), photographers near me (1,000/mo)', target: 'Sitewide', outline: [
+          { h2: 'Define What You Need First', h3: ['Family, headshot, pet, event\u2014different specialties matter', 'Indoor studio vs. outdoor on-location'] },
+          { h2: 'Where to Search for Local Photographers', h3: ['Google Business Profile and Maps', 'Instagram and portfolio websites', 'Word-of-mouth and community recommendations'] },
+          { h2: 'What to Look for in a Portfolio', h3: ['Consistency of style and quality', 'Photos similar to what you want'] },
+          { h2: 'Questions to Ask Before Booking', h3: ['Pricing, packages, and what\u2019s included', 'Turnaround time and delivery format', 'Cancellation and rescheduling policies'] },
+          { h2: 'Red Flags to Watch For', h3: ['No portfolio or very few samples', 'Unclear pricing or hidden fees'] },
+          { h2: 'Why Local Matters in Ottawa-Gatineau', h3: ['Knowledge of the best locations', 'Weather-flexible scheduling', 'Supporting your local creative community'] },
+        ]},
+        { title: 'Hockey Player Portraits: From Ice to Studio', keywords: 'hockey player photoshoot (210/mo, KD 25)', target: '/hockey', outline: [
+          { h2: 'Why Hockey Players Deserve Studio Portraits', h3: ['Beyond the team photo', 'Capturing individual personality and pride'] },
+          { h2: 'On-Ice Action Portraits', h3: ['Camera settings for rink lighting', 'Positioning and composition on the ice'] },
+          { h2: 'Studio Portraits in Full Gear', h3: ['Dramatic lighting setups', 'Helmet on vs. helmet off looks'] },
+          { h2: 'Creative Composite and Dark Background Shots', h3: ['The "sports illustrated" style', 'Smoke, spotlights, and team branding'] },
+          { h2: 'Senior and Milestone Hockey Portraits', h3: ['Last season commemorative shoots', 'Commitment day and draft photos'] },
+          { h2: 'How to Book a Hockey Portrait Session', h3: ['What to bring', 'Session options and pricing'] },
+        ]},
       ]},
       { month: 'July 2026', phase: 'Phase 2: Bilingual & Cross-Service', posts: [
-        { title: 'Séance photo professionnelle : comment bien se préparer', keywords: 'photo professionnelle (880/mo), photographe professionnel', target: '/fr-ca pages' },
-        { title: "Including Your Pets in Family Photos: Tips from a Vet-Turned-Photographer", keywords: 'family photography with dogs (70/mo), family portrait with dog', target: '/family + /pets' },
-        { title: 'Summer Mini Sessions in Ottawa: What You Need to Know', keywords: 'family photography ottawa, family pictures ottawa (KD 20–25)', target: '/family' },
-        { title: "LinkedIn Headshots That Get You Noticed: A Photographer's Guide", keywords: 'linkedin headshots (260/mo, KD 39), professional headshots (1,900/mo)', target: '/corporate' },
+        { title: 'S\u00e9ance photo professionnelle : comment bien se pr\u00e9parer', keywords: 'photo professionnelle (880/mo), photographe professionnel', target: '/fr-ca pages', outline: [
+          { h2: 'Pourquoi investir dans une photo professionnelle', h3: ['L\u2019impact d\u2019une premi\u00e8re impression en ligne', 'LinkedIn, site web, et m\u00e9dias sociaux'] },
+          { h2: 'Choisir le bon style de portrait', h3: ['Corporatif formel vs. entrepreneurial d\u00e9contract\u00e9', 'Adapter le style \u00e0 votre industrie'] },
+          { h2: 'Comment s\u2019habiller pour votre s\u00e9ance', h3: ['Couleurs et v\u00eatements recommand\u00e9s', 'Ce qu\u2019il faut \u00e9viter'] },
+          { h2: 'Pr\u00e9paration le jour de la s\u00e9ance', h3: ['Coiffure, maquillage, et soins', 'Arriver d\u00e9tendu et confiant'] },
+          { h2: 'D\u00e9roulement de la s\u00e9ance photo', h3: ['Dur\u00e9e et nombre de poses', 'Coaching d\u2019expression et direction artistique'] },
+          { h2: 'R\u00e9servez votre s\u00e9ance professionnelle', h3: [] },
+        ]},
+        { title: "Including Your Pets in Family Photos: Tips from a Vet-Turned-Photographer", keywords: 'family photography with dogs (70/mo), family portrait with dog', target: '/family + /pets', outline: [
+          { h2: 'Why Including Pets Makes Family Photos Better', h3: ['They\u2019re family too', 'Natural joy and candid moments'] },
+          { h2: 'Preparing Your Pet for the Session', h3: ['Exercise and bathroom breaks beforehand', 'Favourite treats as motivation', 'Grooming timeline (bath, nails, brushing)'] },
+          { h2: 'Posing Families with Dogs (and Cats)', h3: ['Keeping everyone in frame', 'Leash management techniques', 'The "look at the camera" trick'] },
+          { h2: 'Managing Nervous or Excitable Animals', h3: ['Vet tech body language reading', 'When to push through vs. take a break', 'Backup plans for unpredictable pets'] },
+          { h2: 'Best Locations for Pet-Friendly Family Sessions', h3: ['Off-leash parks and quiet trails', 'Studio setups that work for animals'] },
+          { h2: 'Gallery Highlights: Families + Their Pets', h3: [] },
+        ]},
+        { title: 'Summer Mini Sessions in Ottawa: What You Need to Know', keywords: 'family photography ottawa, family pictures ottawa (KD 20–25)', target: '/family', outline: [
+          { h2: 'What Is a Mini Session?', h3: ['Duration and number of photos', 'How it differs from a full session'] },
+          { h2: 'Why Summer Minis Are So Popular', h3: ['Longer golden hours', 'Kids are out of school and relaxed', 'Lower price point for families'] },
+          { h2: 'Summer 2026 Mini Session Locations', h3: ['Aylmer waterfront evenings', 'Andrew Haydon Park', 'Gatineau Park lookout points'] },
+          { h2: 'What to Wear for Summer Photos', h3: ['Light fabrics and breathable layers', 'Colour palettes that pop in green settings'] },
+          { h2: 'Tips for Photos with Young Kids in Summer', h3: ['Timing around nap schedules', 'Snacks, water, and shade breaks'] },
+          { h2: 'How to Book a Summer Mini Session', h3: ['Dates, pricing, and availability', 'What\u2019s included in your package'] },
+        ]},
+        { title: "LinkedIn Headshots That Get You Noticed: A Photographer's Guide", keywords: 'linkedin headshots (260/mo, KD 39), professional headshots (1,900/mo)', target: '/corporate', outline: [
+          { h2: 'Why Your LinkedIn Photo Is Your Most Important Asset', h3: ['Profiles with photos get 21x more views', 'What recruiters and clients notice first'] },
+          { h2: 'LinkedIn Headshot Requirements and Best Practices', h3: ['Optimal dimensions and file size', 'Background and framing guidelines'] },
+          { h2: 'What to Wear for Your LinkedIn Headshot', h3: ['Industry-appropriate dress codes', 'Colours that stand out in the feed'] },
+          { h2: 'Professional Photographer vs. AI Headshots', h3: ['Why authenticity still wins', 'The uncanny valley problem with AI photos'] },
+          { h2: 'The Session Process', h3: ['Pre-session consultation', 'Expression coaching for natural confidence', 'How many looks to expect'] },
+          { h2: 'Choosing Your Best Shot', h3: ['What makes a headshot "work" on LinkedIn', 'Using it across other platforms'] },
+          { h2: 'LinkedIn Headshot FAQ', h3: ['How often should I update it?', 'Can I use the same photo everywhere?', 'How much does it cost?'] },
+        ]},
       ]},
       { month: 'August 2026', phase: 'Phase 2/3: Authority Building', posts: [
-        { title: 'The Complete Guide to Pet Portraits: From Playful to Regal', keywords: 'pet portraits (1,300/mo, KD 56), pet photography (KD 40)', target: '/pets' },
-        { title: 'Back-to-School Family Photos: Capture the Moment', keywords: 'family photos (1,600/mo, KD 33), fall family photos (880/mo)', target: '/family' },
-        { title: "Photography in Ottawa: Your Guide to the City's Best Photographers", keywords: 'photography ottawa (KD 36), ottawa photographer (KD 40)', target: 'Sitewide' },
-        { title: 'Why Every Business Needs Professional Corporate Photography', keywords: 'corporate photography (KD 47), business headshots (KD 50)', target: '/corporate' },
+        { title: 'The Complete Guide to Pet Portraits: From Playful to Regal', keywords: 'pet portraits (1,300/mo, KD 56), pet photography (KD 40)', target: '/pets', outline: [
+          { h2: 'What Makes a Great Pet Portrait', h3: ['Personality over perfection', 'The difference between snapshots and portraits'] },
+          { h2: 'Portrait Styles: Playful, Classic, and Dramatic', h3: ['Bright and playful studio setups', 'Classic posed portraits', 'Dark background fine-art style'] },
+          { h2: 'Preparing Your Pet for Their Portrait', h3: ['Grooming and timing', 'Treats, toys, and noisemakers', 'A vet tech\u2019s guide to keeping animals calm'] },
+          { h2: 'Working with Different Animals', h3: ['Dogs: energy management and posing', 'Cats: patience and environmental comfort', 'Small pets, horses, and exotics'] },
+          { h2: 'Indoor Studio vs. Outdoor Portraits', h3: ['Controlled lighting for consistency', 'Natural settings for candid energy'] },
+          { h2: 'Legacy and Memorial Portraits', h3: ['Honouring senior and aging pets', 'Creating lasting keepsakes'] },
+          { h2: 'How Much Do Pet Portraits Cost?', h3: ['Session types and what\u2019s included', 'Print and digital package options'] },
+        ]},
+        { title: 'Back-to-School Family Photos: Capture the Moment', keywords: 'family photos (1,600/mo, KD 33), fall family photos (880/mo)', target: '/family', outline: [
+          { h2: 'Why Back-to-School Is the Perfect Time for Family Photos', h3: ['Kids are growing fast\u2014document it', 'Fall light and foliage at their peak'] },
+          { h2: 'Best Ottawa Locations for Fall Family Sessions', h3: ['Gatineau Park autumn colours', 'Dominion Arboretum\u2019s tree canopy', 'Urban Ottawa backdrops'] },
+          { h2: 'Outfit Ideas for Fall Family Photos', h3: ['Warm neutrals, burgundy, and mustard', 'Layering for visual depth and comfort'] },
+          { h2: 'Session Timing: When to Book', h3: ['Peak colour weeks (late September\u2013mid October)', 'Weekend vs. weekday sessions'] },
+          { h2: 'Making It Fun for the Kids', h3: ['Age-appropriate activities during the session', 'Letting personalities shine through'] },
+          { h2: 'From Session to Wall Art', h3: ['Choosing prints vs. digital galleries', 'Display ideas for your home'] },
+        ]},
+        { title: "Photography in Ottawa: Your Guide to the City's Best Photographers", keywords: 'photography ottawa (KD 36), ottawa photographer (KD 40)', target: 'Sitewide', outline: [
+          { h2: 'Ottawa\u2019s Photography Scene: An Overview', h3: ['A thriving creative community', 'Specialties across the region'] },
+          { h2: 'Family and Portrait Photographers', h3: ['What to look for in a family photographer', 'Top studios and on-location options'] },
+          { h2: 'Corporate and Headshot Photographers', h3: ['Ottawa\u2019s business photography landscape', 'Studio vs. on-site sessions'] },
+          { h2: 'Sports and Event Photographers', h3: ['Hockey, soccer, and community sports', 'Why specialized experience matters'] },
+          { h2: 'Pet Photographers', h3: ['A growing niche in Ottawa-Gatineau', 'What makes a great pet photographer'] },
+          { h2: 'How to Choose the Right Photographer for You', h3: ['Portfolio review checklist', 'Questions to ask before booking'] },
+          { h2: 'Why Alicia Riddle Photography Stands Out', h3: ['Five specialties under one roof', 'A vet tech\u2019s eye, a photographer\u2019s heart'] },
+        ]},
+        { title: 'Why Every Business Needs Professional Corporate Photography', keywords: 'corporate photography (KD 47), business headshots (KD 50)', target: '/corporate', outline: [
+          { h2: 'The ROI of Professional Business Photography', h3: ['Trust signals on your website', 'Converting visitors into clients'] },
+          { h2: 'Beyond Headshots: Types of Corporate Photography', h3: ['Team and culture photos', 'Office and workspace imagery', 'Event and conference coverage'] },
+          { h2: 'Building a Consistent Brand Image', h3: ['Matching your visual identity', 'Style guides for photo consistency'] },
+          { h2: 'Planning a Corporate Photo Day', h3: ['Coordinating schedules for minimal disruption', 'Location scouting in your office'] },
+          { h2: 'Stock Photos vs. Custom Photography', h3: ['Why generic images hurt your brand', 'The authenticity advantage'] },
+          { h2: 'What to Budget for Corporate Photography', h3: ['Half-day vs. full-day sessions', 'Ongoing retainer options for growing teams'] },
+        ]},
       ]},
     ];
 
@@ -535,12 +708,31 @@
                 <div key={idx} className="mb-8 border rounded-lg p-6" style={{ borderColor: colors.cerulean }}>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{month.month}</h3>
                   <p className="text-sm text-slate-600 mb-4 font-semibold">{month.phase}</p>
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     {month.posts.map((post, pidx) => (
                       <div key={pidx} className="bg-slate-50 rounded p-4">
                         <p className="font-semibold text-slate-900 mb-2">{post.title}</p>
                         <p className="text-xs text-slate-600 mb-1"><span className="font-medium">Keywords:</span> {post.keywords}</p>
-                        <p className="text-xs text-slate-600"><span className="font-medium">Target Page:</span> {post.target}</p>
+                        <p className="text-xs text-slate-600 mb-3"><span className="font-medium">Target Page:</span> {post.target}</p>
+                        {post.outline && (
+                          <div className="mt-3 pt-3 border-t border-slate-200">
+                            <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: colors.cobalt }}>Suggested Heading Outline</p>
+                            <div className="space-y-1">
+                              {post.outline.map((section, sidx) => (
+                                <div key={sidx} className="text-xs">
+                                  <p className="font-semibold text-slate-800">H2: {section.h2}</p>
+                                  {section.h3 && section.h3.length > 0 && (
+                                    <div className="ml-4 text-slate-500">
+                                      {section.h3.map((sub, subidx) => (
+                                        <p key={subidx}>H3: {sub}</p>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
